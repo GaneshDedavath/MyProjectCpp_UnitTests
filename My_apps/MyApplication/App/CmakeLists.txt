@@ -1,0 +1,30 @@
+# Minimum required version of CMake
+cmake_minimum_required(VERSION 3.10)
+
+# Project name
+project(MyProject)
+
+# Target name
+set(TARGET My_App)
+
+# Specify the C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Create the main application executable
+add_executable(${TARGET} main.cpp)
+
+# Link the implementation library
+target_link_libraries(${TARGET}
+    PRIVATE
+    My_App_Impl
+)
+
+# Optionally add include path (usually not needed if Impl sets PUBLIC includes correctly)
+# target_include_directories(${TARGET} PRIVATE ../Impl/include)
+
+# Specify the install directory
+set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/install)
+
+# Install the executable to the install directory under bin
+install(TARGETS ${TARGET} DESTINATION bin)

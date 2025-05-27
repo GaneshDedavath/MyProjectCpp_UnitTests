@@ -1,0 +1,1 @@
+Kudos! Your code is able to read a text file. Here is Your Content. Welcome HelloWorl! 

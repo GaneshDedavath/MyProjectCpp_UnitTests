@@ -1,0 +1,34 @@
+cmake_minimum_required(VERSION 3.10)
+
+# Define the INTERFACE target
+add_library(My_App_Impl INTERFACE)
+# Set the source files and include directories
+
+# Add the source library
+# Impl/CMakeLists.txt
+# add_library(arith STATIC src/Arithemetics.cpp)
+# target_include_directories(arith PUBLIC include)
+
+
+target_sources(My_App_Impl INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/My_App.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Arithemetics.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/pointers.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/multithreading.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/oops.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/pattern.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/array_string.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/struct_union.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/templates.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Exceptions.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Advanced.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/filehandling.cpp
+
+)
+
+
+target_include_directories(My_App_Impl INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+message("Include directory: ${CMAKE_CURRENT_SOURCE_DIR}/include")

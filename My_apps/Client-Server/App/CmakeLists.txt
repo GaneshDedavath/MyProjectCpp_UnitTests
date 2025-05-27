@@ -1,0 +1,22 @@
+# Minimum required version of CMake
+cmake_minimum_required(VERSION 3.10)
+
+# Project name
+project(MyProject2)
+
+set(TARGET CS_App)
+
+# Specify the C++ standard (optional but recommended)
+set(CMAKE_CXX_STANDARD 17)
+
+# Add an executable target to the project with the source files in the src directory
+add_executable(${TARGET} main.cpp)
+target_link_libraries(${TARGET}
+    PRIVATE
+    CS_App_Impl
+)
+# Specify the install directory
+set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/install)
+
+# Install the executable to the install directory in the bin folder
+install(TARGETS ${TARGET} DESTINATION bin)

@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.10)
+
+# Define the INTERFACE target
+add_library(CS_App_Impl INTERFACE)
+
+# Set the source files and include directories
+target_sources(CS_App_Impl INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/client.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/server.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/MainApp.cpp
+)
+
+target_include_directories(CS_App_Impl INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+message("Include directory: ${CMAKE_CURRENT_SOURCE_DIR}/include")

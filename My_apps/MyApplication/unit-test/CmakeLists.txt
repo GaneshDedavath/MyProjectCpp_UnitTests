@@ -1,0 +1,37 @@
+cmake_minimum_required(VERSION 3.10)
+project(MyTestProject)
+
+enable_testing()
+
+# Try to use gtest_manual first
+set(GTEST_MANUAL_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../install/gtest_manual")
+set(GTEST_PREDEF_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../lib/gtest")
+
+if(EXISTS "${GTEST_MANUAL_PATH}")
+    set(GTEST_LIB_DIR "${GTEST_MANUAL_PATH}")
+    message(STATUS "gtest_manual libs found, going with generated gtest libs")
+else()
+    message(STATUS "gtest_manual not found, falling back to  predefined gtest")
+    set(GTEST_LIB_DIR "${GTEST_PREDEF_PATH}")
+endif()
+
+# Add your test executable first
+add_executable(MyTests main_test.cpp)
+
+# Include GTest headers
+target_include_directories(MyTests PRIVATE
+    ${GTEST_LIB_DIR}/include
+)
+
+# Link to precompiled GTest and GMock libraries
+target_link_libraries(MyTests PRIVATE
+    ${GTEST_LIB_DIR}/lib/libgtest.a
+    ${GTEST_LIB_DIR}/lib/libgmock.a
+)
+
+# Register with CTest
+add_test(NAME AllTestsInMain COMMAND MyTests)
+
+# Install the test executable to the 'bin' folder inside the install prefix
+install(TARGETS MyTests
+        RUNTIME DESTINATION bin)

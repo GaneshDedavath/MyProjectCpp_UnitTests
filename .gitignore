@@ -1,0 +1,3 @@
+build/
+install/
+tools/googletest/gtest

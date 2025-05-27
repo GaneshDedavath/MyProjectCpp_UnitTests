@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.10)
+
+
+# Define the INTERFACE target
+add_library(Snake_Game_Impl INTERFACE)
+
+# Set the source files and include directories
+target_sources(Snake_Game_Impl INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/MyGame.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/walls.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/snake.cpp
+)
+
+target_include_directories(Snake_Game_Impl INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+message("Include directory: ${CMAKE_CURRENT_SOURCE_DIR}/include")

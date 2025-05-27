@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/Workspace/MyProject_CppExamples/tools/googletest/gtest/build-mingw/cmake_install.cmake",
+		"D:/Workspace/MyProject_CppExamples/tools/googletest/gtest/build-mingw/googlemock/cmake_install.cmake",
+		"D:/Workspace/MyProject_CppExamples/tools/googletest/gtest/build-mingw/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
