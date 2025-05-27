@@ -16,7 +16,7 @@ else()
 endif()
 
 # Add your test executable first
-add_executable(MyTests main_test.cpp)
+add_executable(MyTests main_test.cpp test_impl.cpp)
 
 # Include GTest headers
 target_include_directories(MyTests PRIVATE

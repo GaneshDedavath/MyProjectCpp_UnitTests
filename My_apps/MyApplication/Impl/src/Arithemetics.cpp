@@ -8,21 +8,20 @@ AritheMeticClass::~AritheMeticClass(){
 }
 //Define all the arithemetic functions
 
-void AritheMeticClass::addition(int x, int y){
-    cout <<"[ARITHEMETIC & OPS]  Addition is: " << x+y << endl;
+int AritheMeticClass::addition(int x, int y){
+    return x+y;
 }
 
-void AritheMeticClass::subtraction(int x, int y){
-    cout << "[ARITHEMETIC & OPS]  Subtraction is: " << x-y << endl;
+int AritheMeticClass::subtraction(int x, int y){
+    return x-y;
 }
 
-void AritheMeticClass::multiplication(int x, int y){
-    cout << "[ARITHEMETIC & OPS]  Multiplication is: " << x*y << endl;
-
+int AritheMeticClass::multiplication(int x, int y){
+    return x*y;
 }
 
-void AritheMeticClass::division(int x, int y){
-    cout << "[ARITHEMETIC & OPS]  Division is: " << x/y << endl;
+int AritheMeticClass::division(int x, int y){
+    return x/y;
 }
 
 //Operator Overloading
@@ -51,10 +50,10 @@ void Complex::Print(){
 
 void MainClass::Arithemetics(int x, int y){
     AritheMeticClass arith;
-    arith.addition(x, y);
-    arith.subtraction(x, y);
-    arith.multiplication(x, y);
-    arith.division(x, y);
+    cout <<"[ARITHEMETIC & OPS]  Addition is: " << arith.addition(x, y) << endl;
+    cout << "[ARITHEMETIC & OPS]  Subtraction is: " << arith.subtraction(x, y) << endl; ;
+    cout << "[ARITHEMETIC & OPS]  Multiplication is: " << arith.multiplication(x, y) << endl;
+    cout << "[ARITHEMETIC & OPS]  Division is: " << arith.division(x, y) <<endl;
 
     //Operator Overloading
     

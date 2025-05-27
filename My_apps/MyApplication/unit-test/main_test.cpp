@@ -1,15 +1,12 @@
-#include "main_test.h"
-
-int Test_sum(int a, int b){
-    return a+b;
-}
-
-string hello_w(string c,string  d){
-    return c+d;
-}
+#include <gtest/gtest.h>
+#include "../Impl/include/main_test.h"
 
 
 
+/* 
+Basic Unit Tests for the Test_sum function.
+These tests cover various scenarios including:
+*/
 TEST(SumTest, PositiveNumbers) {
     EXPECT_EQ(Test_sum(2, 3), 5);
 }
@@ -19,7 +16,7 @@ TEST(SumTest, NegativeNumbers) {
 }
 
 TEST(SumTest, MixedSignNumbers) {
-    EXPECT_EQ(Test_sum(-2, 3), 1);
+    EXPECT_EQ(Test_sum(-2, 3), 3);
 }
 
 TEST(SumTest, Zero) {
@@ -29,6 +26,10 @@ TEST(SumTest, Zero) {
 TEST(HelloTest, HWtest){
     EXPECT_EQ(hello_w("Hello ", "World!"), "Hello World!");
 }
+/*
+Tests for Class Member Functions
+These tests cover the member functions of the AritheMeticClass and Complex class.
+*/
 
 
 int main(int argc, char **argv){
